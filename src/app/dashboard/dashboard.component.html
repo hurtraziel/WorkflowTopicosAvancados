@@ -1,0 +1,392 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" [@routerTransition]>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Sistema de Tarefas - Workflow</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse">
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Novo
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTrabalho">Trabalho</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTarefa">Tarefa</a>
+            </div>
+          </div>
+      
+      <ul class="navbar-nav ml-auto">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+              Logout
+            </button>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container">
+      <p><a href="#">Dashboard</a></p>
+      <p>&nbsp;</p>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon"> <i class="fa fa-fw"></i> </div>
+              <div class="mr-5">Trabalhos em Andamento</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#modal1">
+              <span class="float-left">
+                <a data-toggle="modal" data-target="#modal1">
+                  <span class="float-left">Ver Detalhes</span></a>
+              </span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>  
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw"></i>
+              </div>
+              <div class="mr-5">Trabalhos em Atraso</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#modal2">
+              <span class="float-left">
+                <a data-toggle="modal" data-target="#modal2">
+                  <span class="float-left">Ver Detalhes</span></a>
+              </span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-success o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa alert-warning"></i>
+              </div>
+              <div class="mr-5">Trabalhos Concluídos</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#modal3">
+              <span class="float-left">
+                <a data-toggle="modal" data-target="#modal3">
+                  <span class="float-left">Ver Detalhes</span></a>
+              </span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw"></i>
+              </div>
+              <div class="mr-5">Trabalhos não Terminados</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#modal4">
+              <span class="float-left">
+                <a data-toggle="modal" data-target="#modal4">
+                  <span class="float-left">Ver Detalhes</span></a>
+              </span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+</div>
+<div id="modal1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+              Trabalhos em Andamento
+            </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table table-bordered">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>Nome</td>
+              <td>Usuário</td>
+              <td>Tarefas concluídas</td>
+              <td>Tarefas abertas</td>
+              <td>Data de início</td>
+              <td>Data de finalização</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal2" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+              Trabalhos em Atraso
+            </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table table-bordered">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>Nome</td>
+              <td>Usuário</td>
+              <td>Tarefas concluídas</td>
+              <td>Tarefas abertas</td>
+              <td>Data de início</td>
+              <td>Data de finalização</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+        Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal3" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+              Trabalhos Concluídos
+            </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table table-bordered">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>Nome</td>
+              <td>Usuário</td>
+              <td>Tarefas concluídas</td>
+              <td>Tarefas abertas</td>
+              <td>Data de início</td>
+              <td>Data de finalização</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Trabalho Teste</td>
+              <td>teste@gmail.com</td>
+              <td>1</td>
+              <td>1</td>
+              <td>27/06/2018</td>
+              <td>27/07/2018</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal4" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+              Trabalhos não terminados
+            </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table table-bordered">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>Nome</td>
+              <td>Usuário</td>
+              <td>Tarefas concluídas</td>
+              <td>Tarefas abertas</td>
+              <td>Data de início</td>
+              <td>Data de finalização</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Encerrar Sessão</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Deseja realmente sair?  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary" style="text-align: center" (click)="form_logout()">Sair</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalTrabalho" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Cadastrar novo Trabalho</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body mx-3">
+                  <div class="md-form mb-1">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Nome</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!">Data de início</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!">Data de término</label>
+                  </div>
+  
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-deep-orange">Enviar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="modalTarefa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Cadastrar nova Tarefa</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body mx-3">
+                  <div class="md-form mb-1">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Nome da Tarefa</label>
+                  </div>
+                  <div class="md-form mb-1">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <select name="trabalho" id="orangeForm-name" class="form-control validate">
+                      <option label="Trabalho Teste" class="orangeForm-name">Trabalho Teste</option>
+                    </select>
+                    <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Trabalho vinculado</label>
+                </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!">Data de início</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="Erro!" data-success="Ok!">Data de término</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <textarea rows="5" cols="20" id="orangeForm-date" class="form-control validate"></textarea>
+                      <label data-error="Erro!" data-success="Ok!">Descrição</label>
+                  </div>
+                  <div class="md-form mb-1">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <select name="trabalho" id="orangeForm-name" class="form-control validate">
+                      <option value="1" class="orangeForm-name">Concluído</option>
+                      <option value="0" class="orangeForm-name">Não Concluído</option>
+                    </select>
+                    <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Status</label>
+                </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-deep-orange">Enviar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</body>

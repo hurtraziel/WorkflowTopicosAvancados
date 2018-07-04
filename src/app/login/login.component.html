@@ -1,0 +1,47 @@
+<div class="parallax-container" style="height: 120px">
+  <div class="parallax" materialize="parallax">
+    <img src="assets/imagens/parallax1.jpg">
+  </div>
+</div>
+<div class="section white" style="box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+  <div class="container">
+    <div class="login">
+      <div class="row">
+        <div class="col s12">
+          <br>
+          <img src="assets/imagens/logo.png" width="150px" class="user-avatar" />
+          <h4>Workflow - Sistema de Tarefas</h4>
+          <div class="input-field col s11 m8 l4 offset-l4 offset-m2">
+            <input type="email" #user class="validate">
+            <label for="email" data-error="Digite um e-mail válido">Email</label>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <div class="input-field col s11 m8 l4 offset-l4 offset-m2">
+            <input type="password" #password class="form-control" required (keydown.enter)="logOn(user.value,password.value)" [type]="hide ? 'password' : 'text'"> <!-- deve-se instanciar a variavel "hide" no modulo ts -->
+            <div class="mostrar-senha">
+              <i class="material-icons right tooltipped " data-position="center" data-delay="50" data-tooltip="Mostrar senha" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</i>
+            </div>
+            <label for="icon_telephone">Senha</label>
+          </div>
+          <!-- botão login -->
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <a class="waves-effect waves-teal btn-flat" onclick="Materialize.toast('Email: teste@gmail.com / Senha: 112233', 4000, 'rounded')">
+            <i class="material-icons left">lock_open</i>Dica</a>
+          <button class="waves-effect waves-teal btn-flat" style="text-align: center" (click)="logOn(user.value,password.value)" type="submit">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax" materialize="parallax">
+    <img src="assets/imagens/parallax1.jpg">
+  </div>
+</div>
