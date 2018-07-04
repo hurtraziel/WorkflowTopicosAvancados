@@ -32,6 +32,30 @@ export class TrabalhoService {
     return this.trabalhos;
     
   }
+
+  updateTrabalho(trabalho: Trabalho) {
+    this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Trabalho;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    });
+    this.trabalhoDoc = this.afs.doc(`trabalhos/${trabalho.id}`);
+    this.trabalhoDoc.update(trabalho);
+  }
+  addTrabalho(trabalhos: Trabalho) {
+    this.trabalhosCollection = this.afs.collection('trabalhos');
+    this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Trabalho;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    });
+    this.trabalhosCollection.add(trabalhos);
+  }
+ 
 /* 
   addTrabalho(trabalho: Trabalho){
     this.trabalhosCollection.add(trabalho);

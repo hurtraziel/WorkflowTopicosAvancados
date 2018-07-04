@@ -8,9 +8,13 @@
         </button>
       </div>
       <div class="modal-body mx-3" *ngFor="let t of trabalho">
-        <div class="md-form mb-1">
-          {{t.descricao}}
+        <div>
+            <input type="text" class="md-form mb-1" [(ngModel)]="t.descricao" placeholder="descricao"/>
+            <!--{{t.descricao}}-->
+            <button (click)="updateTrabalho(t)"> OK </button>
+
         </div>
+
         <div class="md-form mb-1">
           {{t.dataInicio}}
         </div>
@@ -19,6 +23,5 @@
         </div>
 
       </div>
-
     </div>
   </div>

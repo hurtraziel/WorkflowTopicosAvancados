@@ -19,6 +19,10 @@ export const APP_ROUTES: Routes = [
         path: 'trabalho/:id', component: TrabalhoComponent,
         canActivate: [AuthGuard]
     },
+    {
+        path: 'trabalho', component: TrabalhoComponent,
+        canActivate: [AuthGuard]
+    },
 ]
 
 

@@ -11,6 +11,14 @@ import { TrabalhoService } from '../services/trabalho.service';
 export class TrabalhoComponent implements OnInit {
   idRota: string;
   trabalho: Trabalho[];
+  trabalhoNovo: Trabalho = { // gravar coleção
+    descricao: '',
+    idNumero: '',
+    dataInicio: null,
+    dataFinal: null,
+    id: ''   
+  }
+ 
   constructor(private trabalhoService: TrabalhoService, private route: ActivatedRoute ) { }
 
   ngOnInit() {
@@ -25,5 +33,18 @@ export class TrabalhoComponent implements OnInit {
       console.log(this.idRota);
     })
   }
-
+  updateTrabalho(trabalho: Trabalho) {   
+    this.trabalhoService.updateTrabalho(trabalho);
+  }
+  onSubmit() {
+    if (this.trabalhoNovo.descricao != '') {
+      this.trabalhoService.addTrabalho(this.trabalhoNovo);
+      this.trabalhoNovo.id = '';
+      this.trabalhoNovo.dataInicio = null;
+      this.trabalhoNovo.dataFinal = null;   
+      this.trabalhoNovo.idNumero = '';       
+    }
+  }
+ 
+ 
 }

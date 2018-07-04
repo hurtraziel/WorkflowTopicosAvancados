@@ -23,6 +23,7 @@ import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.co
 import { TrabalhoService } from './services/trabalho.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
+import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
 
 export const firebaseConfig = {
 
@@ -46,6 +47,7 @@ export const firebaseConfig = {
     DashboardComponent,
     TrabalhosTabelaComponent,
     TrabalhoComponent,
+    AdicionarTrabalhoComponent,
   ],
   imports: [
     BrowserModule,
