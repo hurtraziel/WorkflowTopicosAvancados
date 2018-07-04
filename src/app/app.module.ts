@@ -22,12 +22,12 @@ import { TrabalhosComponent } from './componentes/trabalhos/trabalhos.component'
 
 export const firebaseConfig = {
 
-  apiKey: 'AIzaSyCFEAdD1jZlcdNTy7WWm8GjWnFCdccEOUo',
-  authDomain: 'workflow-irwin.firebaseapp.com',
-  databaseURL: 'https://workflow-irwin.firebaseio.com',
-  projectId: 'workflow-irwin',
-  storageBucket: 'workflow-irwin.appspot.com',
-  messagingSenderId: '1014981411125'
+  apiKey: "AIzaSyBcguEUiZU-r49D8rmGoBpV1zwe5P6FGDU",
+  authDomain: "workflow-sistema-de-tarefas.firebaseapp.com",
+  databaseURL: "https://workflow-sistema-de-tarefas.firebaseio.com",
+  projectId: "workflow-sistema-de-tarefas",
+  storageBucket: "workflow-sistema-de-tarefas.appspot.com",
+  messagingSenderId: "894268588170"
 };
 
 
