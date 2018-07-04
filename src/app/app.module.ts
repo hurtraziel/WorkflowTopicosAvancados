@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
@@ -19,6 +19,10 @@ import { Parallax } from './componentes/parallax/parallax.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TarefasComponent } from './componentes/tarefas/tarefas.component';
 import { TrabalhosComponent } from './componentes/trabalhos/trabalhos.component';
+import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.component';
+import { TrabalhoService } from './services/trabalho.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { TrabalhoComponent } from './trabalho/trabalho.component';
 
 export const firebaseConfig = {
 
@@ -40,15 +44,19 @@ export const firebaseConfig = {
     LoginComponent,
     Parallax,
     DashboardComponent,
+    TrabalhosTabelaComponent,
+    TrabalhoComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    MaterializeModule
+    MaterializeModule,
+    FormsModule,
+    AngularFirestoreModule
   ],
-  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth],
+  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth, TrabalhoService, AngularFirestoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

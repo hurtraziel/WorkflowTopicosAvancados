@@ -1,0 +1,22 @@
+<div class="modal-body">
+  <table id="classTable" class="table table-bordered">
+    <thead>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Id</td>
+        <td>Nome</td>
+        <td>Data de início</td>
+        <td>Data de finalização</td>
+        <td>Id Banco</td>
+      </tr>
+      <tr *ngFor="let trabalho of trabalhos" [routerLink]="['/trabalho',trabalho.idNumero]" style="cursor: pointer;">
+        <td>{{trabalho.idNumero}}</td>
+        <td>{{trabalho.descricao}}</td>
+        <td>{{trabalho.dataInicio.toDate() | date: 'dd/MM/yyyy'}}</td>
+        <td>{{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</td>
+        <td>{{trabalho.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
