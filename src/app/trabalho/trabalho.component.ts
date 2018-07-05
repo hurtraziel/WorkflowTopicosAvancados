@@ -9,17 +9,24 @@ import { TrabalhoService } from '../services/trabalho.service';
   styleUrls: ['./trabalho.component.scss']
 })
 export class TrabalhoComponent implements OnInit {
+
+  dataTempFinal: any; //usado para concatenar com a data que p banco entende
+ 
   idRota: string;
   trabalho: Trabalho[];
   trabalhoNovo: Trabalho = { // gravar coleção
     descricao: '',
     idNumero: '',
-    dataInicio: null,
+    dataInicio: null, //retorna a data atual
     dataFinal: null,
     id: ''   
   }
  
-  constructor(private trabalhoService: TrabalhoService, private route: ActivatedRoute ) { }
+  constructor(private trabalhoService: TrabalhoService, private route: ActivatedRoute ) { 
+
+    this.dataTempFinal = new Date();    
+  }
+  
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -31,14 +38,16 @@ export class TrabalhoComponent implements OnInit {
       this.trabalho = trabalho;
       console.log(trabalho.length);
       console.log(this.idRota);
-    })
+      })    
   }
   updateTrabalho(trabalho: Trabalho) {   
     this.trabalhoService.updateTrabalho(trabalho);
   }
   onSubmit() {
     if (this.trabalhoNovo.descricao != '') {
-      this.trabalhoService.addTrabalho(this.trabalhoNovo);
+      this.trabalhoNovo.dataInicio = new Date(); // retorna a data atual
+      this.trabalhoNovo.dataFinal = new Date(this.dataTempFinal+"T04:00:00.000Z"); // tipo de tada que o banco aceita: new Date("2018-07-05T00:00:00.000Z")
+      this.trabalhoService.addTrabalho(this.trabalhoNovo); // inserico após as datas para pegar os valores corretos. 
       this.trabalhoNovo.id = '';
       this.trabalhoNovo.descricao = '';
       this.trabalhoNovo.dataInicio = null;
@@ -46,6 +55,11 @@ export class TrabalhoComponent implements OnInit {
       this.trabalhoNovo.idNumero = '';       
     }
   }
- 
+
+  //metodo de teste apenas...pode ser apagado adiante
+  onClick(){
+    console.log("formato cru: " + this.dataTempFinal+"T04:00:00.000Z"); 
+    //console.log(this.dataFinalLocal);
+  }
  
 }

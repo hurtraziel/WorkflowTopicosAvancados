@@ -9,12 +9,16 @@
       </div>
       <div class="modal-body mx-3" >
         <div>
-            <input type="text" class="md-form mb-1" [(ngModel)]="trabalhoNovo.descricao" />
-            <input type="date" class="md-form mb-1" [(ngModel)]="trabalhoNovo.dataInicio" placeholder="descricao"/>
-            <!--{{t.descricao}}-->
+            <input type="text" class="md-form mb-1" [(ngModel)]="trabalhoNovo.descricao" placeholder="Descrição"/>
+            <input type="text" class="md-form mb-1" [(ngModel)]="trabalhoNovo.idNumero" placeholder="id"/> 
+            <input type="date" class="md-form mb-1" [(ngModel)]="dataTempFinal" value="dataTempFinal"/>
+            <button (click)="onClick()"> teste </button>
+            <input type="datetime-local" class="md-form mb-1" [(ngModel)]="dataFinalLocal" placeholder="data Final"/>
+            <!-- {{dataInicioLocal  | date:'MMMM d, y'}} -->
+            {{dataFinalLocal}}
             <button (click)="onSubmit()"> OK </button>
             <input type="checkbox" (change)="updateTrabalho(t)" [(ngModel)]="trabalhoNovo.concluido" name="concluido">
-<div>{{t.descricao}}</div>
+
         </div>
 
         
