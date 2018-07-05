@@ -10,11 +10,12 @@ export class TrabalhoService {
   trabalhoDoc: AngularFirestoreDocument<Trabalho>;
 
   constructor(public afs: AngularFirestore) { 
-    const firestore  = afs.firestore.settings({timestampsInSnapshots: true}); //necessário para ajustar a data.
+    afs.firestore.settings({timestampsInSnapshots: true}); //necessário para ajustar a data.
     this.trabalhosCollection = this.afs.collection('trabalhos');
+    console.log("entrou1");
     }
 
-  getTrabalhos(){
+  getTrabalhos(){    
     this.trabalhos = this.afs.collection('trabalhos').snapshotChanges().map(changes =>{
     return changes.map(a => {
       const data = a.payload.doc.data() as Trabalho;
@@ -34,6 +35,7 @@ export class TrabalhoService {
   }
 
   updateTrabalho(trabalho: Trabalho) {
+    console.log("entrou2");
     this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Trabalho;
@@ -42,8 +44,10 @@ export class TrabalhoService {
       });
     });
     this.trabalhoDoc = this.afs.doc(`trabalhos/${trabalho.id}`);
+    console.log("entrou3");
     this.trabalhoDoc.update(trabalho);
   }
+
   addTrabalho(trabalhos: Trabalho) {
     this.trabalhosCollection = this.afs.collection('trabalhos');
     this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {

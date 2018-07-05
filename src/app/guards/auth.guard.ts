@@ -12,20 +12,18 @@ export class AuthGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | boolean {
 
-        // tslint:disable-next-line:comment-format
         //logic here
-        console.log('VERIFY');
+        console.log('Verificado');
         console.log(localStorage['token']);
 
-        if (localStorage['token'] === undefined) {
+        if (localStorage['token'] == undefined) {
             this.router.navigate(['/login']);
         }
 
-        if (localStorage['token'] !== 'null') {
+        if (localStorage['token'] != 'null') {
             return true;
         } else {
             this.router.navigate(['/login']);
         }
-
     }
 }

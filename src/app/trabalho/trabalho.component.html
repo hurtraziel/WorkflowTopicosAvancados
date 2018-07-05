@@ -7,20 +7,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3" *ngFor="let t of trabalho">
+      <div class="modal-body mx-3" >
         <div>
-            <input type="text" class="md-form mb-1" [(ngModel)]="t.descricao" placeholder="descricao"/>
+            <input type="text" class="md-form mb-1" [(ngModel)]="trabalhoNovo.descricao" />
+            <input type="date" class="md-form mb-1" [(ngModel)]="trabalhoNovo.dataInicio" placeholder="descricao"/>
             <!--{{t.descricao}}-->
-            <button (click)="updateTrabalho(t)"> OK </button>
-
+            <button (click)="onSubmit()"> OK </button>
+            <input type="checkbox" (change)="updateTrabalho(t)" [(ngModel)]="trabalhoNovo.concluido" name="concluido">
+<div>{{t.descricao}}</div>
         </div>
 
-        <div class="md-form mb-1">
-          {{t.dataInicio}}
-        </div>
-        <div class="md-form mb-1">
-          {{t.dataFinal}}
-        </div>
+        
 
       </div>
     </div>

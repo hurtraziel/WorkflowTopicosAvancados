@@ -40,6 +40,7 @@ export class TrabalhoComponent implements OnInit {
     if (this.trabalhoNovo.descricao != '') {
       this.trabalhoService.addTrabalho(this.trabalhoNovo);
       this.trabalhoNovo.id = '';
+      this.trabalhoNovo.descricao = '';
       this.trabalhoNovo.dataInicio = null;
       this.trabalhoNovo.dataFinal = null;   
       this.trabalhoNovo.idNumero = '';       
