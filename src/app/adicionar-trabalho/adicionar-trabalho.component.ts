@@ -32,7 +32,7 @@ export class AdicionarTrabalhoComponent implements OnInit {
   onSubmit() {
     if (this.trabalhoNovo.descricao != '') {
       this.trabalhoNovo.dataInicio = new Date(); // retorna a data atual
-      this.trabalhoNovo.dataFinal = new Date(this.dataTempFinal + "T04:00:00.000Z"); // tipo de tada que o banco aceita: new Date("2018-07-05T00:00:00.000Z")
+      this.trabalhoNovo.dataFinal = new Date(this.dataTempFinal + "T03:00:00.000Z"); // tipo de data que o banco aceita: new Date("2018-07-05T00:00:00.000Z")
       this.trabalhoNovo.status = "Aberto";
       this.trabalhoService.addTrabalho(this.trabalhoNovo); // inserico após as datas para pegar os valores corretos. 
       this.trabalhoNovo.descricao = '';

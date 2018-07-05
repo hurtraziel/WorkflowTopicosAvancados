@@ -1,46 +1,26 @@
-<div class="row">
-  <form class="col s8">
-    <div class="row">
-      <div class="input-field col s4">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
+<div class="row" style="background-color: #343a40; box-shadow: 0px 0px 3px rgb(73, 73, 73);">
+  <div class="col s2"></div>
+  <div class="col s8">
+    <div class="card-panel">
+      <div class="card-action right-align">
+        <a routerLink="/dashboard" routerLinkActive="dashboard" style="font-size: 12pt; font-weight: bold">Dashboard&ensp;</a>
       </div>
-      <div class="input-field col s4">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-        <label for="disabled">Disabled</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Password</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        This is an inline input field:
-        <div class="input-field inline">
-          <input id="email_inline" type="email" class="validate">
-          <label for="email_inline">Email</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+      <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Adicionar um novo Trabalho</span>
+      <div class="row">
+        <div class="input-field col s9">
+          <input id="descricao" [(ngModel)]="trabalhoNovo.descricao" type="text">
+          <label for="descricao">Descreva o novo trabalho.</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="date" [(ngModel)]="dataTempFinal">
+          <span class="helper-text">Data de conclusão.</span>
         </div>
       </div>
+      <div class="card-action center-align">
+        <button class="btn waves-effect waves-light blue darken-3" type="submit" (click)="onSubmit()" name="action">Salvar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
     </div>
-    <p>
-      <input type="checkbox" id="test5" />
-      <label for="test5">Red</label>
-    </p>
-  </form>
+  </div>
 </div>
