@@ -4,5 +4,5 @@ export interface Trabalho {
         dataInicio?: Date;
         dataFinal?: Date;
         descricao?: string;
-        concluido?: boolean;
+        status?: string;
 }

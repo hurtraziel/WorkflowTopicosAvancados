@@ -16,7 +16,7 @@ export class TrabalhoService {
     }
 
   getTrabalhos(){    
-    this.trabalhos = this.afs.collection('trabalhos').snapshotChanges().map(changes =>{
+    this.trabalhos = this.afs.collection('trabalhos', ref => ref.orderBy('idNumero','desc')).snapshotChanges().map(changes =>{
     return changes.map(a => {
       const data = a.payload.doc.data() as Trabalho;
       data.id = a.payload.doc.id;

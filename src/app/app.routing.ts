@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
+import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
 
 
 export const APP_ROUTES: Routes = [
@@ -20,7 +21,7 @@ export const APP_ROUTES: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'trabalho', component: TrabalhoComponent,
+        path: 'novo-trabalho', component: AdicionarTrabalhoComponent,
         canActivate: [AuthGuard]
     },
 ]
