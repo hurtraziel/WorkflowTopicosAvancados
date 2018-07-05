@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
@@ -19,15 +19,20 @@ import { Parallax } from './componentes/parallax/parallax.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TarefasComponent } from './componentes/tarefas/tarefas.component';
 import { TrabalhosComponent } from './componentes/trabalhos/trabalhos.component';
+import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.component';
+import { TrabalhoService } from './services/trabalho.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { TrabalhoComponent } from './trabalho/trabalho.component';
+import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
 
 export const firebaseConfig = {
 
-  apiKey: 'AIzaSyCFEAdD1jZlcdNTy7WWm8GjWnFCdccEOUo',
-  authDomain: 'workflow-irwin.firebaseapp.com',
-  databaseURL: 'https://workflow-irwin.firebaseio.com',
-  projectId: 'workflow-irwin',
-  storageBucket: 'workflow-irwin.appspot.com',
-  messagingSenderId: '1014981411125'
+  apiKey: "AIzaSyBcguEUiZU-r49D8rmGoBpV1zwe5P6FGDU",
+  authDomain: "workflow-sistema-de-tarefas.firebaseapp.com",
+  databaseURL: "https://workflow-sistema-de-tarefas.firebaseio.com",
+  projectId: "workflow-sistema-de-tarefas",
+  storageBucket: "workflow-sistema-de-tarefas.appspot.com",
+  messagingSenderId: "894268588170"
 };
 
 
@@ -40,15 +45,20 @@ export const firebaseConfig = {
     LoginComponent,
     Parallax,
     DashboardComponent,
+    TrabalhosTabelaComponent,
+    TrabalhoComponent,
+    AdicionarTrabalhoComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    MaterializeModule
+    MaterializeModule,
+    FormsModule,
+    AngularFirestoreModule
   ],
-  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth],
+  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth, TrabalhoService, AngularFirestoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

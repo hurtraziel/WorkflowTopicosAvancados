@@ -10,7 +10,7 @@
               Novo
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTrabalho">Trabalho</a>
+                <a class="dropdown-item" routerLink="/trabalho" data-toggle="modal" data-target="app-trabalhos">Trabalho </a>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTarefa">Tarefa</a>
             </div>
           </div>
@@ -103,186 +103,10 @@
         </div>
       </div>
 </div>
-<div id="modal1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <h4 class="modal-title" id="classModalLabel">
-              Trabalhos em Andamento
-            </h4>
-      </div>
-      <div class="modal-body">
-        <table id="classTable" class="table table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Id</td>
-              <td>Nome</td>
-              <td>Usuário</td>
-              <td>Tarefas concluídas</td>
-              <td>Tarefas abertas</td>
-              <td>Data de início</td>
-              <td>Data de finalização</td>
-            </tr>
-            <tr>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">
-          Fechar
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="text-white">
+  <app-trabalhos-tabela></app-trabalhos-tabela>
 </div>
-<div id="modal2" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <h4 class="modal-title" id="classModalLabel">
-              Trabalhos em Atraso
-            </h4>
-      </div>
-      <div class="modal-body">
-        <table id="classTable" class="table table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Id</td>
-              <td>Nome</td>
-              <td>Usuário</td>
-              <td>Tarefas concluídas</td>
-              <td>Tarefas abertas</td>
-              <td>Data de início</td>
-              <td>Data de finalização</td>
-            </tr>
-            <tr>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">
-        Fechar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="modal3" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <h4 class="modal-title" id="classModalLabel">
-              Trabalhos Concluídos
-            </h4>
-      </div>
-      <div class="modal-body">
-        <table id="classTable" class="table table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Id</td>
-              <td>Nome</td>
-              <td>Usuário</td>
-              <td>Tarefas concluídas</td>
-              <td>Tarefas abertas</td>
-              <td>Data de início</td>
-              <td>Data de finalização</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Trabalho Teste</td>
-              <td>teste@gmail.com</td>
-              <td>1</td>
-              <td>1</td>
-              <td>27/06/2018</td>
-              <td>27/07/2018</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">
-          Fechar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="modal4" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <h4 class="modal-title" id="classModalLabel">
-              Trabalhos não terminados
-            </h4>
-      </div>
-      <div class="modal-body">
-        <table id="classTable" class="table table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Id</td>
-              <td>Nome</td>
-              <td>Usuário</td>
-              <td>Tarefas concluídas</td>
-              <td>Tarefas abertas</td>
-              <td>Data de início</td>
-              <td>Data de finalização</td>
-            </tr>
-            <tr>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-            </tr> 
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">
-          Fechar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -303,39 +127,7 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="modalTrabalho" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header text-center">
-                  <h4 class="modal-title w-100 font-weight-bold">Cadastrar novo Trabalho</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body mx-3">
-                  <div class="md-form mb-1">
-                      <i class="fa fa-user prefix grey-text"></i>
-                      <input type="text" id="orangeForm-name" class="form-control validate">
-                      <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Nome</label>
-                  </div>
-                  <div class="md-form mb-1">
-                      <i class="fa fa-envelope prefix grey-text"></i>
-                      <input type="date" id="orangeForm-date" class="form-control validate">
-                      <label data-error="Erro!" data-success="Ok!">Data de início</label>
-                  </div>
-                  <div class="md-form mb-1">
-                      <i class="fa fa-envelope prefix grey-text"></i>
-                      <input type="date" id="orangeForm-date" class="form-control validate">
-                      <label data-error="Erro!" data-success="Ok!">Data de término</label>
-                  </div>
-  
-              </div>
-              <div class="modal-footer d-flex justify-content-center">
-                  <button class="btn btn-deep-orange">Enviar</button>
-              </div>
-          </div>
-      </div>
-  </div>
+
   <div class="modal fade" id="modalTarefa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
