@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
 import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
+import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.component';
 
 
 export const APP_ROUTES: Routes = [
@@ -17,11 +18,15 @@ export const APP_ROUTES: Routes = [
         path: 'login', component: LoginComponent
     },
     {
-        path: 'trabalho/:id', component: TrabalhoComponent,
+        path: 'trabalho/:id', component: TrabalhoComponent, 
         canActivate: [AuthGuard]
     },
     {
         path: 'novo-trabalho', component: AdicionarTrabalhoComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'trabalhos', component: TrabalhosTabelaComponent,
         canActivate: [AuthGuard]
     },
 ]

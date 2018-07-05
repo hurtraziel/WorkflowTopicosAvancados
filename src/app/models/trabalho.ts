@@ -1,6 +1,6 @@
 export interface Trabalho {
         id?: string;
-        idNumero?: string;
+        idNumero?: number;
         dataInicio?: Date;
         dataFinal?: Date;
         descricao?: string;

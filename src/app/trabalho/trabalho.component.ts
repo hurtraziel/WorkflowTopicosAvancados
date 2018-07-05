@@ -16,7 +16,7 @@ export class TrabalhoComponent implements OnInit {
   trabalho: Trabalho[];
   trabalhoNovo: Trabalho = { // gravar coleção
     descricao: '',
-    idNumero: '',
+    idNumero: null,
     dataInicio: null, //retorna a data atual
     dataFinal: null,
     id: ''   
@@ -52,7 +52,7 @@ export class TrabalhoComponent implements OnInit {
       this.trabalhoNovo.descricao = '';
       this.trabalhoNovo.dataInicio = null;
       this.trabalhoNovo.dataFinal = null;   
-      this.trabalhoNovo.idNumero = '';       
+       
     }
   }
 

@@ -17,12 +17,12 @@ import { MaterializeModule } from 'angular2-materialize';
 import { Parallax } from './componentes/parallax/parallax.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TarefasComponent } from './componentes/tarefas/tarefas.component';
-import { TrabalhosComponent } from './componentes/trabalhos/trabalhos.component';
 import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.component';
 import { TrabalhoService } from './services/trabalho.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
 import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
+import { TrabalhosComponent } from './trabalhos/trabalhos.component';
 
 export const firebaseConfig = {
 
