@@ -8,6 +8,7 @@
       <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Adicionar um novo Trabalho</span>
       <div class="row">
         <div class="input-field col s9">
+          <i class="material-icons prefix">shop</i>
           <input id="descricao" [(ngModel)]="trabalhoNovo.descricao" type="text">
           <label for="descricao">Descreva o novo trabalho.</label>
         </div>
@@ -16,7 +17,7 @@
           <span class="helper-text">Data de conclusão.</span>
         </div>
       </div>
-      <div class="card-action center-align">
+      <div class="card-action center-align">         
         <button class="btn waves-effect waves-light blue darken-3" type="submit" (click)="onSubmit()" name="action">Salvar
           <i class="material-icons right">send</i>
         </button>

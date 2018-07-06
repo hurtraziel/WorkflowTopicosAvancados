@@ -1,19 +1,16 @@
-<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Visualizar Trabalho</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="row" style="background-color: #343a40; box-shadow: 0px 0px 3px rgb(73, 73, 73);">
+  <div class="col s0"></div>
+  <div class="col s12">
+    <div class="card-panel">
+      <div class="card-action right-align">
+        <a routerLink="/dashboard" routerLinkActive="dashboard" style="font-size: 12pt; font-weight: bold">Dashboard&ensp;</a>
       </div>
-      <div class="modal-body mx-3" >
-        <div>
-            
-        </div>
-
-        
-
+      <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Trabalho Atual</span>
+      <div class="row" *ngFor="let t of trabalho">
+        <div class="trab-nome">{{t.descricao}}</div>
+        <div class="divider"></div>
+        <div>Descrição</div>
       </div>
     </div>
   </div>
+</div>

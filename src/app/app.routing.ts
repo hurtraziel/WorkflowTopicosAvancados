@@ -6,9 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { TrabalhoComponent } from './trabalhos/trabalho/trabalho.component';
 import { AdicionarTrabalhoComponent } from './trabalhos/adicionar-trabalho/adicionar-trabalho.component';
-import { TrabalhosTabelaComponent } from './trabalhos/trabalhos-tabela/trabalhos-tabela.component';
 import { TrabalhosComponent } from './trabalhos/trabalhos.component';
-
 
 
 export const APP_ROUTES: Routes = [

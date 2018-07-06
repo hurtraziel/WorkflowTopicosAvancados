@@ -44,6 +44,7 @@ export class AdicionarTrabalhoComponent implements OnInit {
       this.trabalhoService.addTrabalho(this.trabalhoNovo); // inserico após as datas para pegar os valores corretos. 
       this.trabalhoNovo.descricao = '';
       this.trabalhoNovo.dataFinal = null;
+      alert("Trabalho cadastrado com sucesso!!");
     }
   }
 
