@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrabalhoComponent implements OnInit {
 
-  idRota: string;
+  idTemp: String;
   trabalho: Trabalho[];
 
   constructor(private trabalhoService: TrabalhoService, private route: ActivatedRoute) { }
@@ -18,12 +18,14 @@ export class TrabalhoComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: any) => {
-        this.idRota = params['id'];
+        this.idTemp = params['id']; //o paramametro enviado via rota url é um String
       }
     );
-    this.trabalhoService.getTrabalhoUnitario(this.idRota).subscribe(trabalho => {
-      this.trabalho = trabalho;
-    });
+    const idRota = Number(this.idTemp); // devido ao idNumero se um Number, é necessario fazer o parce Number para passar como prametro para o banco.
+    this.trabalhoService.getTrabalhoUnitario(idRota) // aqui então é passado number como parametro no service.
+      .subscribe(trabalho => {
+        this.trabalho = trabalho;
+      });
   }
 
   updateTrabalho(trabalho: Trabalho) {

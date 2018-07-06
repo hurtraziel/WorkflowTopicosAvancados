@@ -6,11 +6,22 @@
         <a routerLink="/dashboard" routerLinkActive="dashboard" style="font-size: 12pt; font-weight: bold">Dashboard&ensp;</a>
       </div>
       <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Trabalho Atual</span>
-      <div class="row" *ngFor="let t of trabalho">
-        <div class="trab-nome">{{t.descricao}}</div>
-        <div class="divider"></div>
-        <div>Descrição</div>
-      </div>
+        <div class="row" *ngFor="let t of trabalho">
+          <div class="trab-nome">{{t.descricao}}</div>
+          <div class="divider"></div>
+          <div>Descrição</div>
+          <div class="input-field col s12">
+
+              <div class="input-field col s12">
+                  <select (change)="updateTrabalho(t)" [(ngModel)]="t.status" materialize="material_select">                    
+                      <option value="Aberto">Aberto</option>
+                      <option value="Concluído">Concluído</option>
+                  </select>
+                  <label>Status</label>
+              </div>
+
+          </div>
+        </div>      
     </div>
   </div>
 </div>
