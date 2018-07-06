@@ -4,15 +4,20 @@ import { ModuleWithProviders } from '@angular/core/src/metadata';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
-import { TrabalhoComponent } from './trabalho/trabalho.component';
-import { AdicionarTrabalhoComponent } from './adicionar-trabalho/adicionar-trabalho.component';
-import { TrabalhosTabelaComponent } from './trabalhos-tabela/trabalhos-tabela.component';
+import { TrabalhoComponent } from './trabalhos/trabalho/trabalho.component';
+import { AdicionarTrabalhoComponent } from './trabalhos/adicionar-trabalho/adicionar-trabalho.component';
+import { TrabalhosTabelaComponent } from './trabalhos/trabalhos-tabela/trabalhos-tabela.component';
+import { TrabalhosComponent } from './trabalhos/trabalhos.component';
+
 
 
 export const APP_ROUTES: Routes = [
     {
         path: 'dashboard', component: DashboardComponent,
         canActivate: [AuthGuard]
+    },
+    {
+        path: '', component: LoginComponent
     },
     {
         path: 'login', component: LoginComponent
@@ -26,7 +31,7 @@ export const APP_ROUTES: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'trabalhos', component: TrabalhosTabelaComponent,
+        path: 'trabalhos', component: TrabalhosComponent,
         canActivate: [AuthGuard]
     },
 ]

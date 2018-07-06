@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Trabalho } from '../models/trabalho';
-import { TrabalhoService } from '../services/trabalho.service';
+import { Trabalho } from '../../models/trabalho';
+import { TrabalhoService } from '../../services/trabalho.service';
 
 @Component({
   selector: 'app-adicionar-trabalho',

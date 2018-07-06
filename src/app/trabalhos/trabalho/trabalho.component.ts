@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Trabalho } from '../models/trabalho';
+import { Trabalho } from '../../models/trabalho';
 import { ActivatedRoute } from '@angular/router';
-import { TrabalhoService } from '../services/trabalho.service';
+import { TrabalhoService } from '../../services/trabalho.service';
 
 @Component({
   selector: 'app-trabalho',
