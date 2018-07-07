@@ -24,7 +24,7 @@
         </div>
 
         <div class="trab-status">
-          <a materialize="tooltip" data-position="top" onChange="Materialize.toast('Status alterado com Sucesso!', 3000)" data-tooltip="Mudar Status">
+          <a materialize="tooltip" data-position="top" data-tooltip="Mudar Status" onChange="Materialize.toast('Status alterado com Sucesso!', 3000)">
             <select materialize="material_select" (change)="updateTrabalho(t)" [(ngModel)]="t.status">
               <option value="Aberto">Aberto</option>
               <option value="Concluído">Concluído</option>

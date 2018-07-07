@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s1"></div>
     <div class="col s10">
-      <table class="responsive-table highlight bordered centered">
+      <table class="responsive-table highlight bordered">
         <thead>
           <tr>
             <th>Nº</th>
@@ -17,11 +17,23 @@
             <td>{{trabalho.idNumero}}</td>
             <td>{{trabalho.nome}}</td>
             <td>{{trabalho.dataInicio.toDate() | date: 'dd/MM/yyyy'}}</td>
-            <td>{{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</td>
-            <td>{{trabalho.status}}</td>
+            <td>
+              <div *ngIf="hoje/1000 > trabalho.dataFinal.seconds && trabalho.status != 'Concluído'" style="color: red;" (onload)="updateTrabalho($event,trabalho)">
+                {{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}&ensp;
+                <i class="material-icons md-18" style="vertical-align: middle;">warning</i>
+              </div>
+              <div *ngIf="trabalho.status === 'Concluído'">{{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</div>
+              <div *ngIf="trabalho.dataFinal.seconds > hoje/1000 && trabalho.status !== 'Concluído'">{{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</div>
+            </td>
+            <td>
+              <div *ngIf="trabalho.status === 'Aberto'" style="color:rgb(27, 27, 27);">
+                <i class="material-icons" style="vertical-align: middle; color:orange;">fiber_manual_record</i>&ensp;{{trabalho.status}}</div>
+              <div *ngIf="trabalho.status === 'Concluído'" style="color:rgb(27, 27, 27);">
+                <i class="material-icons" style="vertical-align: middle; color: rgb(0, 99, 0);">fiber_manual_record</i>&ensp;{{trabalho.status}}</div>
+            </td>
             <tr>
         </tbody>
       </table>
     </div>
-  </div> 
+  </div>
 </div>

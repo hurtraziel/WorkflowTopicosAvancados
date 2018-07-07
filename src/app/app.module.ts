@@ -23,6 +23,9 @@ import { TrabalhosComponent } from './trabalhos/trabalhos.component';
 import { TrabalhosTabelaComponent } from './trabalhos/trabalhos-tabela/trabalhos-tabela.component';
 import { TrabalhoComponent } from './trabalhos/trabalho/trabalho.component';
 import { AdicionarTrabalhoComponent } from './trabalhos/adicionar-trabalho/adicionar-trabalho.component';
+import { TrabalhosAtrasadosComponent } from './trabalhos/trabalhos-atrasados.component';
+import { TrabalhosAbertosComponent } from './trabalhos/trabalhos-abertos.component';
+import { TrabalhosConcluidosComponent } from './trabalhos/trabalhos-concluidos.component';
 
 export const firebaseConfig = {
 
@@ -46,6 +49,9 @@ export const firebaseConfig = {
     TrabalhosTabelaComponent,
     TrabalhoComponent,
     AdicionarTrabalhoComponent,
+    TrabalhosAtrasadosComponent,
+    TrabalhosAbertosComponent,
+    TrabalhosConcluidosComponent,
   ],
   imports: [
     BrowserModule,

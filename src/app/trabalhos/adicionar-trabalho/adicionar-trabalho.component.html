@@ -9,15 +9,19 @@
       <div class="row">
         <div class="input-field col s9">
           <i class="material-icons prefix">shop</i>
-          <input id="descricao" [(ngModel)]="trabalhoNovo.descricao" type="text">
-          <label for="descricao">Descreva o novo trabalho.</label>
+          <input id="descricao" [(ngModel)]="trabalhoNovo.nome" type="text">
+          <label for="descricao">Título do trabalho.</label>
         </div>
         <div class="input-field col s3">
           <input type="date" [(ngModel)]="dataTempFinal">
           <span class="helper-text">Data de conclusão.</span>
         </div>
+        <div class="input-field col s12">
+          <textarea id="textarea2" [(ngModel)]="trabalhoNovo.descricao" class="materialize-textarea" data-length="250"></textarea>
+          <label for="textarea2">Descreva o novo trabalho.</label>
+        </div>
       </div>
-      <div class="card-action center-align">         
+      <div class="card-action center-align">
         <button class="btn waves-effect waves-light blue darken-3" type="submit" (click)="onSubmit()" name="action">Salvar
           <i class="material-icons right">send</i>
         </button>

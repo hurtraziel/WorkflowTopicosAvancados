@@ -33,18 +33,31 @@ export class TrabalhoService {
         return data;
       });
     });
-    
-    // return this.trabalhosCollection.snapshotChanges().map((item: any) => item);
-    // this.trabalhos = this.afs.collection('trabalhos', ref => {
-    //   return ref.where('idNumero', '==', id)
-    // }).valueChanges();
-    // return this.trabalhos;
+  }
 
+  getTrabalhosAberto() {
+    this.trabalhos = this.afs.collection('trabalhos', ref => {
+      return ref.where('status', '==', 'Aberto')
+    }).valueChanges();
+    return this.trabalhos;
+  }
+
+  getTrabalhosConcluido() {
+    this.trabalhos = this.afs.collection('trabalhos', ref => {
+      return ref.where('status', '==', 'Concluído')
+    }).valueChanges();
+    return this.trabalhos;
+  }
+
+  getTrabalhosAtraso() {
+    this.trabalhos = this.afs.collection('trabalhos', ref => {
+      return ref.where('atraso', '==', true)
+    }).valueChanges();
+    return this.trabalhos;
   }
 
   updateTrabalho(trabalho: Trabalho) {
-    console.log("entrou2");
-    this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {
+        this.trabalhos = this.trabalhosCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Trabalho;
         data.id = a.payload.doc.id;
@@ -52,9 +65,7 @@ export class TrabalhoService {
       });
     });
     this.trabalhoDoc = this.afs.doc(`trabalhos/${trabalho.id}`);
-    console.log("entrou3");
-    console.log(trabalho.status);
-    this.trabalhoDoc.update(trabalho);
+         this.trabalhoDoc.update(trabalho);
   }
 
   addTrabalho(trabalhos: Trabalho) {
