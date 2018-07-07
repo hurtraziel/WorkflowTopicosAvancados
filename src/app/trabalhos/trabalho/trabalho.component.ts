@@ -29,7 +29,12 @@ export class TrabalhoComponent implements OnInit {
   }
 
   updateTrabalho(trabalho: Trabalho) {
-    this.trabalhoService.updateTrabalho(trabalho);
+    this.trabalhoService.updateTrabalho(trabalho);    
+  }
+
+  alert(trabalho: Trabalho){
+    
+    alert("Trabalho "+trabalho.status+" com sucesso!");
   }
 
 }

@@ -15,7 +15,7 @@
         <tbody>
           <tr *ngFor="let trabalho of trabalhos" [routerLink]="['/trabalho',trabalho.idNumero]" style="cursor: pointer;">
             <td>{{trabalho.idNumero}}</td>
-            <td>{{trabalho.descricao}}</td>
+            <td>{{trabalho.nome}}</td>
             <td>{{trabalho.dataInicio.toDate() | date: 'dd/MM/yyyy'}}</td>
             <td>{{trabalho.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</td>
             <td>{{trabalho.status}}</td>

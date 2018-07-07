@@ -5,23 +5,36 @@
       <div class="card-action right-align">
         <a routerLink="/dashboard" routerLinkActive="dashboard" style="font-size: 12pt; font-weight: bold">Dashboard&ensp;</a>
       </div>
-      <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Trabalho Atual</span>
-        <div class="row" *ngFor="let t of trabalho">
-          <div class="trab-nome">{{t.descricao}}</div>
+      <div class="trab-titulo">
+        <span class="card-title">Trabalho Atual&ensp;- </span>
+      </div>
+      <div class="row" *ngFor="let t of trabalho">
+        <div class="trab-nome">{{t.nome}}</div>
+        <div class="trab-nun">{{t.idNumero}}
           <div class="divider"></div>
-          <div>Descrição</div>
-          <div class="input-field col s12">
+          <div class="info">Número</div>
+        </div>
+        <div class="trab-inicio">{{t.dataInicio.toDate() | date: 'dd/MM/yyyy'}}
+          <div class="divider"></div>
+          <div class="info">Data de Abertura</div>
+        </div>
+        <div class="trab-final">{{t.dataFinal.toDate() | date: 'dd/MM/yyyy'}}
+          <div class="divider"></div>
+          <div class="info">Data de Conclusão</div>
+        </div>
 
-              <div class="input-field col s12">
-                  <select (change)="updateTrabalho(t)" [(ngModel)]="t.status" materialize="material_select">                    
-                      <option value="Aberto">Aberto</option>
-                      <option value="Concluído">Concluído</option>
-                  </select>
-                  <label>Status</label>
-              </div>
-
-          </div>
-        </div>      
+        <div class="trab-status">
+          <a materialize="tooltip" data-position="top" onChange="Materialize.toast('Status alterado com Sucesso!', 3000)" data-tooltip="Mudar Status">
+            <select materialize="material_select" (change)="updateTrabalho(t)" [(ngModel)]="t.status">
+              <option value="Aberto">Aberto</option>
+              <option value="Concluído">Concluído</option>
+            </select>
+          </a>
+        </div>
+        <div class="info-descricao">Descrição</div>
+        <div class="trab-descricao">{{t.descricao}}
+        </div>
+      </div>
     </div>
   </div>
 </div>
