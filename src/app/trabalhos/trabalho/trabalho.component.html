@@ -18,7 +18,12 @@
           <div class="divider"></div>
           <div class="info">Data de Abertura</div>
         </div>
-        <div class="trab-final">{{t.dataFinal.toDate() | date: 'dd/MM/yyyy'}}
+        <div class="trab-final">
+          <a materialize="tooltip" data-position="top" data-tooltip="Trabalho Atrasado!!!">
+            <div *ngIf="hoje/1000 > t.dataFinal.seconds && t.status != 'Concluído'" style="color: red;">{{t.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</div>
+          </a>
+          <div *ngIf="t.status === 'Concluído'">{{t.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</div>
+          <div *ngIf="t.dataFinal.seconds > hoje/1000 && t.status !== 'Concluído'">{{t.dataFinal.toDate() | date: 'dd/MM/yyyy'}}</div>
           <div class="divider"></div>
           <div class="info">Data de Conclusão</div>
         </div>
@@ -35,6 +40,9 @@
         <div class="trab-descricao">{{t.descricao}}
         </div>
       </div>
+    </div>    
+    <div class="card-panel">
+      <app-tarefas></app-tarefas>
     </div>
   </div>
 </div>

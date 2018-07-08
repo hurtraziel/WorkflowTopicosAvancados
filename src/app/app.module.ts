@@ -1,7 +1,8 @@
+import { TarefaService } from './services/tarefa.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { routing } from './app.routing';
@@ -16,7 +17,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { MaterializeModule } from 'angular2-materialize';
 import { Parallax } from './componentes/parallax/parallax.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TarefasComponent } from './componentes/tarefas/tarefas.component';
 import { TrabalhoService } from './services/trabalho.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { TrabalhosComponent } from './trabalhos/trabalhos.component';
@@ -26,6 +26,7 @@ import { AdicionarTrabalhoComponent } from './trabalhos/adicionar-trabalho/adici
 import { TrabalhosAtrasadosComponent } from './trabalhos/trabalhos-atrasados.component';
 import { TrabalhosAbertosComponent } from './trabalhos/trabalhos-abertos.component';
 import { TrabalhosConcluidosComponent } from './trabalhos/trabalhos-concluidos.component';
+import { TarefasComponent } from './tarefas/tarefas.component';
 
 export const firebaseConfig = {
 
@@ -62,7 +63,7 @@ export const firebaseConfig = {
     FormsModule,
     AngularFirestoreModule
   ],
-  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth, TrabalhoService, AngularFirestoreModule],
+  providers: [AuthGuard, HttpUtilService, LoginService, AngularFireModule, AngularFireAuth, TrabalhoService, TarefaService, AngularFirestoreModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

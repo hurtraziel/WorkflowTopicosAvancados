@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrabalhoComponent implements OnInit {
 
+  hoje = Date.now();
   idTemp: String;
   trabalho: Trabalho[];
 
