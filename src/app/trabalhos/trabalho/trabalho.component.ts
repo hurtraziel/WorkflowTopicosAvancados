@@ -12,6 +12,7 @@ export class TrabalhoComponent implements OnInit {
 
   hoje = Date.now();
   idTemp: String;
+  idRota: Number;
   trabalho: Trabalho[];
 
   constructor(private trabalhoService: TrabalhoService, private route: ActivatedRoute) { }
@@ -22,8 +23,8 @@ export class TrabalhoComponent implements OnInit {
         this.idTemp = params['id']; //o paramametro enviado via rota url é um String
       }
     );
-    const idRota = Number(this.idTemp); // devido ao idNumero se um Number, é necessario fazer o parce Number para passar como prametro para o banco.
-    this.trabalhoService.getTrabalhoUnitario(idRota) // aqui então é passado number como parametro no service.
+    this.idRota = Number(this.idTemp); // devido ao idNumero se um Number, é necessario fazer o parce Number para passar como prametro para o banco.
+    this.trabalhoService.getTrabalhoUnitario(this.idRota) // aqui então é passado number como parametro no service.
       .subscribe(trabalho => {
         this.trabalho = trabalho;
       });

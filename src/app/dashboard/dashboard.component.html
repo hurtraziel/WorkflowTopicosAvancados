@@ -1,6 +1,6 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Sistema de Tarefas - Workflow</a>
+    <a class="navbar-brand">Sistema de Tarefas - Workflow</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,8 +12,7 @@
           Novo
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" routerLink="/novo-trabalho" routerLinkActive="novo-trabalho" data-toggle="modal">Trabalho </a>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTarefa">Tarefa</a>
+          <a class="dropdown-item" routerLink="/novo-trabalho"  routerLinkActive="novo-trabalho" data-toggle="modal">Trabalho </a>          
         </div>
       </div>
 
@@ -41,10 +40,10 @@
               <div class="divider" style="width: 180px;"></div>
               <div class="Heading h1" *ngIf="abertos < 10">0{{abertos}}</div>
               <div class="Heading h1" *ngIf="abertos > 9">{{abertos}}</div>
-            </div>            
+            </div>
             <a class="card-footer text-white clearfix small z-1" href="#modal1">
               <span class="float-left">
-                  <a data-toggle="modal" routerLink="/trabalhos-abertos" routerLinkActive="trabalhos-abertos">
+                <a data-toggle="modal" routerLink="/trabalhos-abertos" routerLinkActive="trabalhos-abertos">
                   <span class="float-left">Ver Detalhes</span>
                 </a>
               </span>
@@ -127,8 +126,6 @@
     </div>
     <div class="text-white">
     </div>
-
-
     <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -144,59 +141,6 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             <button class="btn btn-primary" style="text-align: center" (click)="form_logout()">Sair</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="modalTarefa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center">
-            <h4 class="modal-title w-100 font-weight-bold">Cadastrar nova Tarefa</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body mx-3">
-            <div class="md-form mb-1">
-              <i class="fa fa-user prefix grey-text"></i>
-              <input type="text" id="orangeForm-name" class="form-control validate">
-              <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Nome da Tarefa</label>
-            </div>
-            <div class="md-form mb-1">
-              <i class="fa fa-user prefix grey-text"></i>
-              <select name="trabalho" id="orangeForm-name" class="form-control validate">
-                <option label="Trabalho Teste" class="orangeForm-name">Trabalho Teste</option>
-              </select>
-              <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Trabalho vinculado</label>
-            </div>
-            <div class="md-form mb-1">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <input type="date" id="orangeForm-date" class="form-control validate">
-              <label data-error="Erro!" data-success="Ok!">Data de início</label>
-            </div>
-            <div class="md-form mb-1">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <input type="date" id="orangeForm-date" class="form-control validate">
-              <label data-error="Erro!" data-success="Ok!">Data de término</label>
-            </div>
-            <div class="md-form mb-1">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <textarea rows="5" cols="20" id="orangeForm-date" class="form-control validate"></textarea>
-              <label data-error="Erro!" data-success="Ok!">Descrição</label>
-            </div>
-            <div class="md-form mb-1">
-              <i class="fa fa-user prefix grey-text"></i>
-              <select name="trabalho" id="orangeForm-name" class="form-control validate">
-                <option value="1" class="orangeForm-name">Concluído</option>
-                <option value="0" class="orangeForm-name">Não Concluído</option>
-              </select>
-              <label data-error="Erro!" data-success="Ok!" for="orangeForm-name">Status</label>
-            </div>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-deep-orange">Enviar</button>
           </div>
         </div>
       </div>

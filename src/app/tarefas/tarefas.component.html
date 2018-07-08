@@ -2,12 +2,12 @@
 <div class="tarefa-etapa">
   <div class="card-body table-responsive">
     <div class="novaT1" *ngIf="tarefaQuant==0">
-      <a class="btn-floating pulse halfway-fab waves-effect waves-light red">
+      <a class="btn-floating pulse halfway-fab waves-effect waves-light red" [routerLink]="['/tarefa',idRota]" materialize="tooltip" data-position="top" data-tooltip="Criar Nova Tarefa">
         <i class="material-icons">add</i>
       </a>
     </div>
     <div class="novaT" *ngIf="tarefaQuant>0">
-      <a class="btn-floating halfway-fab waves-effect waves-light red">
+      <a class="btn-floating  waves-effect waves-light red" [routerLink]="['/tarefa',idRota]" materialize="tooltip" data-position="top" data-tooltip="Criar Nova Tarefa">
         <i class="material-icons">add</i>
       </a>
     </div>
@@ -17,22 +17,24 @@
         <th>Tarefas</th>
         <th>Descrição</th>
         <th>Responsável</th>
-        <th>Entrega</th>        
+        <th>Entrega</th>
       </thead>
-      <tbody >
+      <tbody>
         <tr *ngFor="let tarefa of tarefas let i = index">
           <td>
             <!-- !!!checkbox com framework materialize-angular2 em table deve ter o 'id' com for de index [i] !!! -->
-            <div class="tarefa-check1">                  
-              <input type="checkbox" [id]="i" (change)="updateTarefa(tarefa)" [(ngModel)]="tarefa.concluido" /> 
-              <label [for]="i"></label>             
+            <div class="tarefa-check1">
+               <a materialize="tooltip" data-position="top" data-tooltip="Concluir Tarefa">
+              <input type="checkbox" [id]="i" (change)="updateTarefa(tarefa)" [(ngModel)]="tarefa.concluido" />
+              <label [for]="i"></label>
+            </a>
             </div>
             <div class="tarefa-check" *ngIf="tarefa.concluido == true" style="color:rgb(194, 194, 194); text-decoration: line-through;">{{tarefa.numTarefa}} - {{tarefa.nome}}</div>
             <div class="tarefa-check" *ngIf="tarefa.concluido == !true">{{tarefa.numTarefa}} - {{tarefa.nome}}</div>
           </td>
           <td>
-            <div class="tarefa-check1" *ngIf="tarefa.concluido == true" style="width: 200px; text-align: justify; color:rgb(194, 194, 194); text-decoration: line-through;">{{tarefa.descricao}}</div>
-            <div class="tarefa-check1" *ngIf="tarefa.concluido == !true" style="width: 200px; text-align: justify">{{tarefa.descricao}}</div>
+            <div class="tarefa-check1" *ngIf="tarefa.concluido == true" style="width: 280px; text-align: justify; color:rgb(194, 194, 194); text-decoration: line-through;">{{tarefa.descricao}}</div>
+            <div class="tarefa-check1" *ngIf="tarefa.concluido == !true" style="width: 280px; text-align: justify">{{tarefa.descricao}}</div>
             <td>
               <div class="tarefa-check1" *ngIf="tarefa.concluido == true" style="color:rgb(194, 194, 194); text-decoration: line-through;">{{tarefa.idResp}}</div>
               <div class="tarefa-check1" *ngIf="tarefa.concluido == !true">{{tarefa.idResp}}</div>
@@ -44,14 +46,29 @@
             </td>
             <td>
               <div class="novaT2" *ngIf="tarefa.concluido == !true">
-                <a class="btn-floating halfway-fab waves-effect waves-light red">
-                  <i class="material-icons">highlight_off</i>
-                </a>
+                <div style="position: absolute; width: 0px; padding-top: 44px;">
+                  <div class="fixed-action-btn horizontal direction-top direction-left" style="position: absolute; display: inline-block;  right: 0px;">
+                    <a class="btn-floating btn-small blue">
+                      <i class="large material-icons">mode_edit</i>
+                    </a>
+                    <ul>
+                      <li>
+                        <a class="btn-floating red" (click)='deleteTarefa(tarefa)' style="opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px); padding-top: -20px" materialize="tooltip" data-position="top" data-tooltip="Excluir Tarefa">
+                          <i class="material-icons">highlight_off</i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div class="novaT2" *ngIf="tarefa.concluido == true">
-                <a class="btn-floating halfway-fab disabled"  >
-                  <i class="material-icons">highlight_off</i>
-                </a>
+                <div style="position: absolute; width: 0px; padding-top: 44px;">
+                  <div class="fixed-action-btn horizontal direction-top direction-left" style="position: absolute; display: inline-block;  right: 0px;">
+                    <a class="btn-floating btn-small disabled">
+                      <i class="large material-icons">mode_edit</i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </td>
         </tr>

@@ -6,4 +6,5 @@ export interface Tarefa {
   concluido?: boolean; 
   dataEntrega?: Date;
   numTarefa?: Number;
+  idResp?: string;
 }

@@ -10,6 +10,8 @@ import { TrabalhosComponent } from './trabalhos/trabalhos.component';
 import { TrabalhosAtrasadosComponent } from './trabalhos/trabalhos-atrasados.component';
 import { TrabalhosAbertosComponent } from './trabalhos/trabalhos-abertos.component';
 import { TrabalhosConcluidosComponent } from './trabalhos/trabalhos-concluidos.component';
+import { AdicionarTarefaComponent } from './tarefas/adicionar-tarefa/adicionar-tarefa.component';
+import { EditarTrabalhoComponent } from './trabalhos/editar-trabalho/editar-trabalho.component';
 
 
 export const APP_ROUTES: Routes = [
@@ -45,6 +47,14 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'trabalhos-concluidos', component: TrabalhosConcluidosComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'tarefa/:id', component: AdicionarTarefaComponent, 
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'editar-trabalho/:id', component: EditarTrabalhoComponent, 
         canActivate: [AuthGuard]
     },
 ]

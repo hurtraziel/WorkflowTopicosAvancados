@@ -1,0 +1,31 @@
+<div class="row" style="background-color: #343a40; box-shadow: 0px 0px 3px rgb(73, 73, 73);">
+  <div class="col s2"></div>
+  <div class="col s8">
+    <div class="card-panel" *ngFor="let t of trabalho">
+      <div class="card-action right-align">
+          <a onclick='history.go(-1)' style="font-size: 12pt; font-weight: bold; cursor: pointer;">Voltar&ensp;</a>
+      </div>
+      <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Editar o Trabalho Nº {{t.idNumero}}</span>
+      <div class="row">
+        <div class="input-field col s9">
+          <i class="material-icons prefix">shop</i>
+          <input id="descricao" [(ngModel)]="t.nome" type="text">
+          <label class="active"  for="descricao">Edite o título.</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="date" [(ngModel)]="dataTempFinal">
+          <span class="helper-text">Data de conclusão.</span>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea2" [(ngModel)]="t.descricao" class="materialize-textarea active" data-length="250"></textarea>
+          <label class="active" for="textarea2">Edite da descrição.</label>
+        </div>
+      </div>
+      <div class="card-action center-align">
+        <button class="btn waves-effect waves-light blue darken-3" type="submit" (click)="updateTrabalho(t)" onclick='history.go(-1)' name="action">Salvar
+          <i class="material-icons right">edit</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

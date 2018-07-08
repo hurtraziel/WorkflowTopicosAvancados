@@ -13,7 +13,7 @@ export class TarefasComponent implements OnInit {
   idTemp: String;
   hoje = Date.now();
   tarefaQuant: any;
-
+  idRota: Number;
   constructor(private tarefaService: TarefaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -22,19 +22,25 @@ export class TarefasComponent implements OnInit {
         this.idTemp = params['id']; // id determinado no path da rota.
       }
     );
-    const idRota = Number(this.idTemp); // devido ao idNumero se um Number, é necessario fazer o parce Number para passar como prametro para o banco.
-    this.tarefaService.getTarefas(idRota).subscribe(tarefas => {      
+    this.idRota = Number(this.idTemp); // devido ao idNumero se um Number, é necessario fazer o parce Number para passar como prametro para o banco.
+    this.tarefaService.getTarefas(this.idRota).subscribe(tarefas => {      
       this.tarefas = tarefas;
       this.tarefaQuant = this.tarefas.length; // contorna erro length no template
     });
   }
 
-  deleteTarefa(event, tarefa: Tarefa) {
+  deleteTarefa(tarefa: Tarefa) {
     this.tarefaService.deleteTarefa(tarefa);
+    alert("Tarefa excluída com Sucesso!");
   }
 
   updateTarefa(tarefa: Tarefa) {
     this.tarefaService.updateTarefa(tarefa);
+    if (tarefa.concluido) {
+      alert("Tarefa concluida com Sucesso!");
+    }else{
+      alert("Tarefa Reaberta com Sucesso!");
+    }    
   }
 
 }

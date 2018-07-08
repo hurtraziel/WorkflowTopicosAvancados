@@ -1,0 +1,31 @@
+<div class="row" style="background-color: #343a40; box-shadow: 0px 0px 3px rgb(73, 73, 73);">
+  <div class="col s2"></div>
+  <div class="col s8">
+    <div class="card-panel">
+      <div class="card-action right-align">
+        <a onclick='history.go(-1)' style="font-size: 12pt; font-weight: bold; cursor: pointer;">Voltar&ensp;</a>
+      </div>
+      <span class="card-title" style="font-size: 18pt; font-weight: bold">&ensp;Adicionar uma nova Tarefa</span>
+      <div class="row">
+        <div class="input-field col s9">
+          <i class="material-icons prefix">shop</i>
+          <input id="descricao" [(ngModel)]="tarefaNovo.nome" type="text">
+          <label for="descricao">Título da tarefa.</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="date" [(ngModel)]="dataTempFinal">
+          <span class="helper-text">Data de conclusão.</span>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea2" [(ngModel)]="tarefaNovo.descricao" class="materialize-textarea" data-length="250"></textarea>
+          <label for="textarea2">Descreva a tarefa.</label>
+        </div>
+      </div>
+      <div class="card-action center-align">
+        <button class="btn waves-effect waves-light blue darken-3" type="submit" (click)="onSubmit()" name="action" onclick='history.go(-1)'>Salvar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

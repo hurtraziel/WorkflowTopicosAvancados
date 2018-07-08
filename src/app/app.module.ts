@@ -27,6 +27,8 @@ import { TrabalhosAtrasadosComponent } from './trabalhos/trabalhos-atrasados.com
 import { TrabalhosAbertosComponent } from './trabalhos/trabalhos-abertos.component';
 import { TrabalhosConcluidosComponent } from './trabalhos/trabalhos-concluidos.component';
 import { TarefasComponent } from './tarefas/tarefas.component';
+import { AdicionarTarefaComponent } from './tarefas/adicionar-tarefa/adicionar-tarefa.component';
+import { EditarTrabalhoComponent } from './trabalhos/editar-trabalho/editar-trabalho.component';
 
 export const firebaseConfig = {
 
@@ -53,6 +55,8 @@ export const firebaseConfig = {
     TrabalhosAtrasadosComponent,
     TrabalhosAbertosComponent,
     TrabalhosConcluidosComponent,
+    AdicionarTarefaComponent,
+    EditarTrabalhoComponent,
   ],
   imports: [
     BrowserModule,

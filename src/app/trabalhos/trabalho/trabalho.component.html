@@ -5,6 +5,11 @@
       <div class="card-action right-align">
         <a routerLink="/dashboard" routerLinkActive="dashboard" style="font-size: 12pt; font-weight: bold">Dashboard&ensp;</a>
       </div>
+      <div class="trab-editar">
+          <a class="btn-floating halfway-fab waves-effect waves-light blue" materialize="tooltip" data-position="top" data-tooltip="Editar Trabalho"  [routerLink]="['/editar-trabalho',idRota]">
+            <i class="material-icons">edit</i>
+          </a>
+        </div>
       <div class="trab-titulo">
         <span class="card-title">Trabalho Atual&ensp;- </span>
       </div>
